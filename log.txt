@@ -1,0 +1,11 @@
+commit 0c45da808229429198a0b1b3cff92f586f6ea997 (HEAD -> master)
+Author: DmitryKoltun <fpm.koltun@bsu.by>
+Date:   Tue Feb 6 15:55:57 2018 +0300
+
+    add status.txt
+
+commit a90e08d81bc913de154c4ec64be4b172acd06bd5
+Author: DmitryKoltun <fpm.koltun@bsu.by>
+Date:   Tue Feb 6 15:52:15 2018 +0300
+
+    add .gitignore
