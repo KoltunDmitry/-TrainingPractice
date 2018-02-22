@@ -1,0 +1,119 @@
+body{
+    font-family: Arial,sans-serif;
+    background: #fafafa;
+    padding: 0;
+    margin: 0;
+}
+header{
+}
+.heading{
+    background: white;
+}
+.container{
+    width:72%;
+    height: 60px;
+    margin: 0 auto;
+}
+.line{
+    float:left;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.title h1{
+    font-family: Tahoma,sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    text-transform: uppercase;
+    float:left;
+    margin-top: 15px;
+}
+.logo{
+    float:left;
+    margin-top: 1px;
+}
+.strelka{
+    margin-top: 25px;
+    width: 15px;
+    height: 15px;
+    float:right;
+}
+.profile{
+    margin-top: 10px;
+    margin-right: 5px;
+    float:right;
+}
+.nicknameFooter{
+    float:right;
+    margin-right: 6px;
+    margin-top: 2px;
+}
+.post{
+    border: 1px solid #b3b3b3;
+    background: white;
+    max-width: 44%;
+    max-height: 830px;
+    margin-top: 50px;
+    margin-left: 190px;
+}
+.round{
+    float:left;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+.headPost{
+    height: 60px;
+}
+.nicknamePost{
+    float:left;
+    margin-left: 5px;
+}
+.nicknamePost{
+    font-size: 15px;
+    font-weight: 600;
+}
+.datePhoto{
+    float:left;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+.blockNameDate{
+    margin-left: 60px;
+    margin-top: 10px;
+    width:180px;
+    height: 40px;
+}
+.delete{
+    margin-right: 10px;
+    margin-top: 0px;
+    float: right;
+    width: 40px;
+    height: 40px;
+}
+.edit{
+    margin-top: 2px;
+    float: right;
+    width: 35px;
+    height: 35px;
+}
+.text{
+    width: 100%;
+    max-height: 90px;
+    margin: 0px 10px 10px 10px;
+}
+.photoPlace{
+    max-height: 100%;
+    margin-bottom: 0px;
+}
+.photo{
+    max-width: 100%;
+    max-height: 100%;
+}
+.hashtagInPost{
+    margin-top: 17px;
+    text-align: center;
+    margin-bottom: 17px;
+}
