@@ -8,7 +8,7 @@ header{
     position: fixed;
     top:0px;
     left: 0px;
-    width: 1366px;
+    width: 100% ;
     height: 72px;
 }
 .heading{
@@ -52,21 +52,22 @@ header{
     margin-right: 6px;
     margin-top: 2px;
 }
+
 .firstPost{
     border: 1px solid #b3b3b3;
     background: white;
-    max-width: 44%;
+    width: 600px;
     max-height: 830px;
     margin-top: 120px;
-    margin-left: 190px;
+    margin-left: 15%;
 }
 .post{
     border: 1px solid #b3b3b3;
     background: white;
-    max-width: 44%;
+    width: 600px;
     max-height: 830px;
     margin-top: 50px;
-    margin-left: 190px;
+    margin-left: 15%;
 }
 .round{
     float:left;
@@ -103,14 +104,14 @@ header{
     margin-right: 10px;
     margin-top: 0px;
     float: right;
-    width: 40px;
-    height: 40px;
+    width: 7%;
+    height: 7%;
 }
 .edit{
     margin-top: 2px;
     float: right;
-    width: 35px;
-    height: 35px;
+    width: 6%;
+    height: 6%;
 }
 .text{
     width: 100%;
@@ -118,7 +119,7 @@ header{
     margin: 0px 10px 10px 10px;
 }
 .photoPlace{
-    max-height: 100%;
+    max-height: 800px;
     margin-bottom: 0px;
 }
 .photo{
@@ -126,66 +127,50 @@ header{
     max-height: 100%;
 }
 
-.filtering{
-    position: absolute;
-    left: 800px;
-    float: right;
-    margin-right: 19%;
-    margin-top: 0px;
-    width: 18%;
-    height: 20%;
-
-}
-.textFilter{
-    font-size: 18px;
-    color: dimgrey;
-}
-.line-divider{
-    width: 100%;
-    height: 2px;
-}
 textarea{
     width: 100%;
     resize: none;
 }
-.postAndFilter{
-    width: 100%;
-    height: 830px;
-    border: 1px solid red;
-}
 .likeAndHashtags{
+    height: 50px;
 }
 .like{
+    float: left;
+    weight:90%;
+    height: 90%;
     margin-left: 1%;
 }
-.lineLikeAndHashtags{
+.lineLikeAndHashtags
+{
+    float: left;
+    margin-left: 5px;
     height: 50px;
     width: 5px;
 }
 .hashtagInPost{
-    float:right;
-    width:470px;
+    float: left;
     margin-top: 15px;
-    margin-right: 45px;
+    margin-left: 1%;
 }
 .footer{
     background: black;
     margin-top: 50px;
     height: 180px;
+    weight:0 auto;
     color: white;
 }
-.menu{
+.aboutUs{
     float: left;
     margin-top: 48px;
-    margin-left: 180px;
+    margin-left: 15%;
 }
 .whiteVerticalLine{
     height: 184px;
 }
 .socialNetworks{
     margin-top: 23px;
-    float:right;
-    margin-right: 310px;
+    float:left;
+    margin-left:15%;
     list-style-type: none;
 }
 .google{
@@ -210,4 +195,288 @@ textarea{
 }
 .titleReference{
     color: black;
+}
+.filtering{
+    position: fixed;
+    left: 850px;
+    float: left;
+    margin-top: 0px;
+    width: 200px;
+    height: 20%;
+}
+.textFilter{
+    font-size: 18px;
+    color: dimgrey;
+}
+.line-divider{
+    width: 100%;
+    height: 2px;
+}
+@media only screen and (max-width: 1070px) {
+    .filtering{
+        position: fixed;
+        left: 800px;
+        float: right;
+        margin-right: 19%;
+        margin-top: 0px;
+        width: 18%;
+        height: 20%;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .filtering {
+        position: fixed;
+        left: 760px;
+        float: right;
+        margin-right: 19%;
+        margin-top: 0px;
+        width: 18%;
+        height: 20%;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .filtering{
+        position: static;
+        margin-left: 30%;
+        float: left;
+        margin-top: -200px;
+        width: 300px;
+        height: 20%;
+    }
+    .textFilter{
+        font-size: 18px;
+        color: dimgrey;
+    }
+    .line-divider{
+        width: 100%;
+        height: 2px;
+    }
+    .photoPlace{
+        max-height: 830px;
+        margin-bottom: 0px;
+    }
+    .photo{
+        width: 600px;
+        max-height: 830px;
+    }
+    .firstPost{
+        border: 1px solid #b3b3b3;
+        background: white;
+        width: 600px;
+        max-height: 830px;
+        margin-top: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post{
+        border: 1px solid #b3b3b3;
+        background: white;
+        width: 600px;
+        max-height: 830px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .likeAndHashtags{
+        height:50px;
+    }
+}
+@media only screen and (max-width: 808px) {
+    .footer{
+        background: black;
+        margin-top: 50px;
+        height: 360px;
+        weight:0 auto;
+        color: white;
+    }
+    .aboutUs{
+        float: left;
+        margin-top: 48px;
+        margin-left: 15%;
+    }
+    .socialNetworks{
+        margin-top: 23px;
+        float:left;
+        margin-left: 20%;
+        list-style-type: none;
+    }
+    .photoPlace{
+        max-height: 830px;
+        margin-bottom: 0px;
+    }
+    .photo{
+        width: 600px;
+        max-height: 830px;
+    }
+    .firstPost{
+        border: 1px solid #b3b3b3;
+        background: white;
+        width: 600px;
+        max-height: 830px;
+        margin-top: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post{
+        border: 1px solid #b3b3b3;
+        background: white;
+        width: 600px;
+        max-height: 830px;
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .likeAndHashtags{
+        height:50px;
+    }
+}
+@media only screen and (max-width: 630px) {
+    .firstPost{
+        border: 1px solid #b3b3b3;
+        background: white;
+        width: 90%;
+        max-height: 830px;
+        margin-top: 300px;
+        margin-left: 5%;
+    }
+    .post{
+        border: 1px solid #b3b3b3;
+        background: white;
+        width: 90%;
+        max-height: 830px;
+        margin-top: 50px;
+        margin-left: 5%;
+    }
+}
+@media only screen and (max-width: 530px) {
+    header{
+        position: fixed;
+        top:0px;
+        left: 0px;
+        width: 100% ;
+        height: 72px;
+    }
+    .container{
+        width:95%;
+        height: 60px;
+        margin: 0 auto;
+    }
+    .line{
+        float:left;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+    .title h1{
+        font-family: Tahoma,sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+        text-transform: uppercase;
+        float:left;
+        margin-top: 20px;
+    }
+    .logo{
+        float:left;
+        margin-top: 13px;
+        weight:35px;
+        height: 35px;
+
+    }
+    .arrow{
+        margin-top: 25px;
+        width: 8px;
+        height: 8px;
+        float:right;
+    }
+    .profile{
+        margin-top: 15px;
+        margin-right: 3px;
+        weight:35px;
+        height: 35px;
+        float:right;
+    }
+    .nicknameHeader{
+        float:right;
+        margin-right: 3px;
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    .filtering{
+        position: static;
+        float: left;
+        margin-left: 5%;
+        margin-top: -200px;
+        width: 260px;
+        height: 20%;
+    }
+}
+@media only screen and (max-width: 330px) {
+    header{
+        position: fixed;
+        top:0px;
+        left: 0px;
+        width: 100% ;
+        height: 40px;
+    }
+    .container{
+        width:100%;
+        height: 40px;
+        margin: 0 auto;
+    }
+    .line{
+        float:left;
+        margin-top: 5px;
+        margin-left: 3px;
+        height: 35px;
+    }
+    .title h1{
+        font-family: Tahoma,sans-serif;
+        font-weight: bold;
+        font-size: 0px;
+        text-transform: uppercase;
+        float:left;
+        margin-top: 0px;
+    }
+    .logo{
+        float:left;
+        margin-top: 10px;
+        weight:25px;
+        height: 25px;
+
+    }
+    .arrow{
+        margin-top: 22px;
+        width: 5px;
+        height: 5px;
+        float:right;
+    }
+    .profile{
+        margin-top: 10px;
+        margin-right: 3px;
+        weight:25px;
+        height: 25px;
+        float:right;
+    }
+    .nicknameHeader{
+        float:right;
+        margin-right: 3px;
+        margin-top: 5px;
+        font-size: 10px;
+    }
+    .filtering{
+        position: static;
+        float: left;
+        margin-left: 0;
+        margin-top: -200px;
+        width: 150px;
+        height: 20%;
+    }
+    .footer{
+        height: 400px;
+    }
+    .hashtagInPost{
+        float: left;
+        font-size: 3vw;
+        margin-top: 15px;
+        margin-left: 1%;
+    }
 }
