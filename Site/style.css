@@ -420,6 +420,18 @@ textarea{
         height: 20%;
     }
 }
+.buttonDownload{
+    width: 110px;
+    background: slategrey;
+    display: block;
+    margin-top: 50px;
+    margin-left: 35%;
+    padding: 10px;
+    border: 1px sandybrown;
+    text-decoration: none;
+    border-radius:70px;
+    color: black;
+}
 @media only screen and (max-width: 330px) {
     header {
         position: fixed;
