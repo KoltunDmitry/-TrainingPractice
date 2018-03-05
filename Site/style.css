@@ -165,9 +165,9 @@ textarea{
 }
 
 #socialNetworks{
-    margin-top: 23px;
     float:left;
     margin-left:15%;
+    margin-top: 20px;
     list-style-type: none;
 }
 
@@ -245,7 +245,7 @@ textarea{
     border-radius:70px;
     color: black;
 }
-@media only screen and (min-width: 1367px) {
+@media screen and (min-width: 1367px) {
     #filtering {
         left:950px;
     }
@@ -253,7 +253,7 @@ textarea{
         margin-left: 38%;
     }
 }
-@media only screen and (max-width: 1070px) {
+@media screen and (max-width: 1070px) {
     #filtering{
         position: fixed;
         left: 800px;
@@ -263,13 +263,13 @@ textarea{
         margin-left: 40%;
     }
 }
-@media only screen and (max-width: 1000px) {
+@media  screen and (max-width: 1000px) {
     #filtering {
         left: 760px;
     }
 
 }
-@media only screen and (max-width: 950px) {
+@media  screen and (max-width: 950px) {
     #filtering{
         position: static;
         margin:auto;
@@ -289,7 +289,7 @@ textarea{
         margin-left: 43%;
 
 }
-@media only screen and (max-width: 808px) {
+@media  screen and (max-width: 808px) {
     #footer{
         height: 360px;
         weight:0 auto;
@@ -310,13 +310,13 @@ textarea{
         height:50px;
     }
 }
-@media only screen and (max-width: 630px) {
+@media  screen and (max-width: 630px) {
     .post{
         width: 90%;
         margin-left: 5%;
     }
 }
-@media only screen and (max-width: 530px) {
+@media  screen and (max-width: 530px) {
     header{
         height: 72px;
     }
@@ -365,7 +365,7 @@ textarea{
     }
 }
 }
-@media only screen and (max-width: 330px) {
+@media  screen and (max-width: 330px) {
     header {
         height: 40px;
     }
