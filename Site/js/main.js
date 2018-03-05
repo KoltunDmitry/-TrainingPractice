@@ -1,3 +1,4 @@
+"use strict";
 (function () {
 
     var photoPosts = [
@@ -7,8 +8,9 @@
             createdAt: new Date('2018-02-23T23:00:00'),
             author: 'Иванов Иван',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
-            hashTag: "#hashtag1",
-            like: ["Dima","IVAN"]
+            hashTag: ["#hashtag1","#hashtag2"],
+            like: ["Dima","IVAN"],
+            isDelete:false
         },
         {
             id: '2',
@@ -17,7 +19,8 @@
             author: 'Васильев Василий',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
             hashTag: "#hashtag",
-            like: ["Dima","IVAN"]
+            like: ["Dima","IVAN"],
+            isDelete:false
         },
         {
             id: '3',
@@ -26,7 +29,8 @@
             author: 'Дмитриев Дмитрий',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
             hashTag: "#hashtag",
-            like: ["Dima","IVAN"]
+            like: ["Dima","IVAN"],
+            isDelete:false
         },
         {
             id: '4',
@@ -35,7 +39,8 @@
             author: 'Алексеев Алексей',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
             hashTag: "#hashtag",
-            like: ["Dima","IVAN"]
+            like: ["Dima","IVAN"],
+            isDelete:false
         },
         {
             id: '5',
@@ -44,7 +49,8 @@
             author: 'Александров Александр',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
             hashTag: "#hashtag",
-            like: ["Dima","IVAN"]
+            like: ["Dima","IVAN"],
+            isDelete:false
         },
         {
             id: '6',
@@ -53,7 +59,8 @@
             author: 'Иванов Иван',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
             hashTag: "#hashtag",
-            like: ["Dima","IVAN"]
+            like: ["Dima","IVAN"],
+            isDelete:false
         },
         {
             id: '7',
@@ -62,7 +69,8 @@
             author: 'Васильев Василий',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
             hashTag: "#hashtag",
-            like: ["Dima","IVAN"]
+            like: ["Dima","IVAN"],
+            isDelete:false
         },
         {
             id: '8',
@@ -71,7 +79,8 @@
             author: 'Дмитриев Дмитрий',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
             hashTag: "#hashtag",
-            like: ["Dima","IVAN"]
+            like: ["Dima","IVAN"],
+            isDelete:false
         },
         {
             id: '10',
@@ -80,7 +89,8 @@
             author: 'Алексеев Алексей',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
             hashTag: "#hashtag",
-            like: ["Dima","IVAN"]
+            like: ["Dima","IVAN"],
+            isDelete:false
         },
         {
             id: '9',
@@ -89,7 +99,8 @@
             author: 'Колтун Дмитрий',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
             hashTag: "#hashtag",
-            like: ["Dima","IVAN"]
+            like: ["Dima","IVAN"],
+            isDelete:false
         },
         {
             id: '11',
@@ -98,91 +109,85 @@
             author: 'Иванов Иван',
             photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
             hashTag: "#hashtag",
-            like: ["Dima","IVAN"]
+            like: ["Dima","IVAN"],
+            isDelete:false
         }
     ];
 
     function compareDate(a,b) {
-        return (a.createdAt) - (b.createdAt);
+        return a.createdAt - b.createdAt;
     }
     function print(a,b) {
-        for (i = a; i < b; i++) {
-            console.log(photoPosts[i].id + " " + photoPosts[i].description + " " + photoPosts[i].createdAt + " " +
-                photoPosts[i].author + " " + photoPosts[i].photoLink + " " + photoPosts[i].hashTag + " " + photoPosts[i].like + "\n")
+        for (var i = a; i < b; i++) {
+            if (photoPosts[i] !== null && photoPosts[i] !== undefined) {
+                console.log(photoPosts[i].id + " " + photoPosts[i].description + " " + photoPosts[i].createdAt + " " +
+                    photoPosts[i].author + " " + photoPosts[i].photoLink + " " + photoPosts[i].hashTag + " " + photoPosts[i].like + "\n")
+            }
         }
     }
     function getPhotoPosts(skip,top,filterConfig) {
-        var newArr = []
+        var newArr = [];
         if (filterConfig === undefined) {
             return photoPosts.sort(compareDate).slice(skip, skip + top)
         }
         else {
-            j = 0
-            for(i = 0; i < photoPosts.length;i++){
-                console.log(i + " ")
-                if(filterConfig.author !== undefined && filterConfig.createdAt !== undefined && filterConfig.hashTag !== undefined){
-                    if(photoPosts[i].author === filterConfig.author && photoPosts[i].hashTag === filterConfig.hashTag
-                        && photoPosts[i].createdAt >= filterConfig.createdAt){
-                        newArr[j] = photoPosts[i];
-                        j++;
+                //for(var i = 0; i < photoPosts.length;i++){
+            photoPosts.forEach(function (element) {
+                if (filterConfig.author !== undefined && filterConfig.createdAt !== undefined && filterConfig.hashTag !== undefined) {
+                    if (element.author === filterConfig.author && element.hashTag === filterConfig.hashTag
+                        && element.createdAt >= filterConfig.createdAt) {
+                        newArr.push(element);
                     }
                 }
                 else if(filterConfig.author !== undefined && filterConfig.createdAt !== undefined && filterConfig.hashTag === undefined){
-                    if(photoPosts[i].author === filterConfig.author &&
-                        photoPosts[i].createdAt >= filterConfig.createdAt ){
-                        newArr[j] = photoPosts[i];
-                        j++;
+                    if(element.author === filterConfig.author &&
+                        element.createdAt >= filterConfig.createdAt ){
+                        newArr.push(element);
                     }
                 }
                 else if(filterConfig.author !== undefined && filterConfig.createdAt === undefined && filterConfig.hashTag !== undefined){
-                    if(photoPosts[i].author === filterConfig.author && photoPosts[i].hashTag === filterConfig.hashTag){
-                        newArr[j] = photoPosts[i];
-                        j++;
+                    if(element.author === filterConfig.author && element.hashTag === filterConfig.hashTag){
+                        newArr.push(element);
                     }
                 }
                 else if(filterConfig.author === undefined && filterConfig.createdAt !== undefined && filterConfig.hashTag !== undefined){
-                    if(photoPosts[i].hashTag === filterConfig.hashTag && photoPosts[i].createdAt >= filterConfig.createdAt){
-                        newArr[j] = photoPosts[i];
-                        j++;
+                    if(element.hashTag === filterConfig.hashTag && element.createdAt >= filterConfig.createdAt){
+                        newArr.push(element);
                     }
                 }
                 else if(filterConfig.author !== undefined){
-                    if(photoPosts[i].author === filterConfig.author){
-                        newArr[j] = photoPosts[i];
-                        j++;
+                    if(element.author === filterConfig.author){
+                        newArr.push(element);
                     }
                 }
                 else if(filterConfig.createdAt !== undefined){
-                    if(photoPosts[i].createdAt >= filterConfig.createdAt){
-                        newArr[j] = photoPosts[i];
-                        j++;
+                    if(element.createdAt >= filterConfig.createdAt){
+                        newArr.push(element);
                     }
                 }
                 else if(filterConfig.hashTag !== undefined){
-                    if(photoPosts[i].hashTag === filterConfig.hashTag){
-                        newArr[j] = photoPosts[i];
-                        j++;
+                    if(element.hashTag === filterConfig.hashTag){
+                        newArr.push(element);
                     }
                 }
-            }
+            });
             return newArr.sort(compareDate).slice(skip, skip + top)
         }
     }
     function getPhotoPost(id) {
-        for(i = 0; i < photoPosts.length; i++){
-            if(photoPosts[i].id === id) {
-                return photoPosts[i]
-            }
-        }
-
+        var found = photoPosts.find(function (element) {
+            return element.id === id;
+        })
+        return found;
     }
+
     function validatePhotoPost(object)  {
         var isValidate = true;
         if(typeof object.id !== "string" || typeof object.description !== "string"
             || typeof object.author !== "string" || typeof object.photoLink !== "string" || !(object.createdAt instanceof Date)){
             return false
         }
-        for(i = 0; i < photoPosts.length; i++){
+        for(var i = 0; i < photoPosts.length; i++){
             if(photoPosts[i].id === object.id){
                 return false;
             }
@@ -193,7 +198,7 @@
         if(object.createdAt === undefined || object.createdAt.toString() === "Invalid Date"){
             return false;
         }
-        if(object.author === 0){
+        if(object.author.length === 0 || object.author === undefined || object.author === null){
             return false;
         }
         return true;
@@ -201,29 +206,24 @@
     function addPhotoPost(object){
         if(validatePhotoPost(object)){
             console.log(object)
+            if(object.isDelete===undefined || object.isDelete===null){
+                object.isDelete = false;
+            }
             photoPosts[photoPosts.length] = object
             return true
         }
         return false
     }
     function removePhotoPost(id) {
-        for(i = 0; i < photoPosts.length; i++){
-            if(photoPosts[i].id === id){
-                if(i === 0){
-                    photoPosts.shift()
-                }
-                else if(i === photoPosts.length-1){
-                    photoPosts.pop()
-                }
-                else{
-                    photoPosts.splice(i,1)
-                }
-                return;
-            }
-        }
+        var found = photoPosts.findIndex(i => i.id === id);
+        photoPosts.splice(found, 1)
+    }
+    function removePhotoPostLabeled(id) {
+        var found = photoPosts.findIndex(i => i.id === id);
+        photoPosts[found].isDelete = true;
     }
     function editPhotoPost(id, object){
-        for(i = 0; i < photoPosts.length; i++){
+        for(var i = 0; i < photoPosts.length; i++){
             if(photoPosts[i].id === id){
                 var temp = photoPosts[i]
                 if(object.photoLink !== undefined){
@@ -269,11 +269,12 @@
         createdAt: new Date("1/1/2018"),
         author: 'Dima',
         photoLink: 'http://ont.by/webroot/delivery/files/news/2018/02/22/Dom.jpg',
-        hashTag: "#hashtag"
-
+        hashTag: "#hashtag",
+        isDelete:false
     }
     ]
-
+    removePhotoPost("2")
+    print(0,photoPosts.length)
     console.log(getPhotoPosts(2,5))
     console.log(getPhotoPosts("0","1", {author: "Иванов Иван"}))
     console.log(getPhotoPosts(1,5,{author:"Иванов Иван",hashTag:"#hashtag", createdAt: new Date("01-01-2018")}))
