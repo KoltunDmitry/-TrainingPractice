@@ -9,15 +9,14 @@
 <body>
 <header>
     <div id ="heading">
-        <div class = "container">
+        <div id = "container">
             <a href="#"><img src="image/logo.png" alt="Cheese" id="logo"></a>
             <div class="title">
                 <a href="#" id = "titleReference"><h1>cheese</h1></a>
             </div>
-            <a href="#"><img src="image/arrow.png" alt="" class="arrow-icon"></a>
-            <a href="#"><img src="image/profile.png" alt="" id="profile"></a>
+            <div id = "containerProfile">
+            </div>
             <div id="nicknameHeader">
-                <h3>NickName</h3>
             </div>
         </div>
         <hr/>
@@ -28,194 +27,20 @@
         <a class ="textFilter">Фильтровать по:</a>
         <div class="filterMargins">
         <input type="radio" name="nameAuthor" value="nameAuthor">Имени автора:<Br>
-        <textarea name="nameInput" cols="40" rows="1"></textarea>
-        <input type="radio" name="date" value="date">Дате<Br>
-        <textarea name="dateInput" cols="40" rows="1"></textarea>
+        <input type ="nameInput" class = "authorInput" list = "listAuthor">
+            <datalist id = "listAuthor">
+            </datalist>
+            <input type="radio"  name="date" value="date">Дате<Br>
+            <textarea name="dateInput" placeholder="Формат: ДД/ММ/ГГ" cols="40" rows="1"></textarea>
         <input type="radio" name="hashtag" value="hashtag">Хэштегу<Br>
         <input type = "hashtagInput" class="hashtagInput" list="suggestions">
         <datalist id = "suggestions" >
-            <option>#BSU</option>
-            <option>#Belarus</option>
-            <option>#Minsk</option>
         </datalist>
             <a href = "#" id="buttonSearch">Поиск</a>
         </div>
     </aside>
-    <div class= containterPost">
-        <div class="post">
-            <div class="headPost">
-                <div class="buttonHead">
-                    <button><img src="image/waste.png" alt="deletePost" class="deletePost"></button>
-                    <button><img src="image/edit.jpg" alt="editPost" class="editPost"></button>
-                </div>
-                <img src="temp/zinchenko.jpg" alt="photoAvatar" class="roundAvatar">
-                <div class="blockNameDate">
-                    <div class="nicknamePost">
-                        zinchenko_96
-                    </div>
-                    <div class="datePhoto">
-                        5 february 2018
-                    </div>
-                </div>
-            </div>
-            <div class="text">
-                Too easy against this guy @bernardocarvalhosilva 🤣🤣🤣 </div>
-            <div class="photoPlace">
-                <img src="temp/zinchenkoPlay.jpg" alt="photoPost" class="photo">
-            </div>
-            <div class="likeAndHashtags">
-                <a href="#"><img src="image/redheart.png" alt="Like" class="like"></a>
-                <img src="image/line.png" alt="divider" class="lineLikeAndHashtags">
-                <span class="hashtagInPost">#MC #MU #Football #win</span>
-            </div>
-        </div>
-    </div>
-    <div class= containterPost">
-        <div class="post">
-            <div class="headPost">
-                <div class="buttonHead">
-                    <button><img src="image/waste.png" alt="deletePost" class="deletePost"></button>
-                    <button><img src="image/edit.jpg" alt="editPost" class="editPost"></button>
-                </div>
-                <img src="temp/zinchenko.jpg" alt="photoAvatar" class="roundAvatar">
-                <div class="blockNameDate">
-                    <div class="nicknamePost">
-                        zinchenko_96
-                    </div>
-                    <div class="datePhoto">
-                        5 february 2018
-                    </div>
-                </div>
-            </div>
-            <div class="text">
-                Too easy against this guy @bernardocarvalhosilva 🤣🤣🤣 </div>
-            <div class="photoPlace">
-                <img src="temp/zinchenkoPlay.jpg" alt="photoPost" class="photo">
-            </div>
-            <div class="likeAndHashtags">
-                <a href="#"><img src="image/redheart.png" alt="Like" class="like"></a>
-                <img src="image/line.png" alt="divider" class="lineLikeAndHashtags">
-                <span class="hashtagInPost">#MC #MU #Football #win</span>
-            </div>
-        </div>
-    </div>
-    <div class= containterPost">
-        <div class="post">
-            <div class="headPost">
-                <div class="buttonHead">
-                    <button><img src="image/waste.png" alt="deletePost" class="deletePost"></button>
-                    <button><img src="image/edit.jpg" alt="editPost" class="editPost"></button>
-                </div>
-                <img src="temp/zinchenko.jpg" alt="photoAvatar" class="roundAvatar">
-                <div class="blockNameDate">
-                    <div class="nicknamePost">
-                        zinchenko_96
-                    </div>
-                    <div class="datePhoto">
-                        5 february 2018
-                    </div>
-                </div>
-            </div>
-            <div class="text">
-                Too easy against this guy @bernardocarvalhosilva 🤣🤣🤣 </div>
-            <div class="photoPlace">
-                <img src="temp/zinchenkoPlay.jpg" alt="photoPost" class="photo">
-            </div>
-            <div class="likeAndHashtags">
-                <a href="#"><img src="image/redheart.png" alt="Like" class="like"></a>
-                <img src="image/line.png" alt="divider" class="lineLikeAndHashtags">
-                <span class="hashtagInPost">#MC #MU #Football #win</span>
-            </div>
-        </div>
-    </div>
-    <div class= containterPost">
-        <div class="post">
-            <div class="headPost">
-                <div class="buttonHead">
-                    <button><img src="image/waste.png" alt="deletePost" class="deletePost"></button>
-                    <button><img src="image/edit.jpg" alt="editPost" class="editPost"></button>
-                </div>
-                <img src="temp/zinchenko.jpg" alt="photoAvatar" class="roundAvatar">
-                <div class="blockNameDate">
-                    <div class="nicknamePost">
-                        zinchenko_96
-                    </div>
-                    <div class="datePhoto">
-                        5 february 2018
-                    </div>
-                </div>
-            </div>
-            <div class="text">
-                Too easy against this guy @bernardocarvalhosilva 🤣🤣🤣 </div>
-            <div class="photoPlace">
-                <img src="temp/zinchenkoPlay.jpg" alt="photoPost" class="photo">
-            </div>
-            <div class="likeAndHashtags">
-                <a href="#"><img src="image/redheart.png" alt="Like" class="like"></a>
-                <img src="image/line.png" alt="divider" class="lineLikeAndHashtags">
-                <span class="hashtagInPost">#MC #MU #Football #win</span>
-            </div>
-        </div>
-    </div>
-    <div class= containterPost">
-        <div class="post">
-            <div class="headPost">
-                <div class="buttonHead">
-                    <button><img src="image/waste.png" alt="deletePost" class="deletePost"></button>
-                    <button><img src="image/edit.jpg" alt="editPost" class="editPost"></button>
-                </div>
-                <img src="temp/zinchenko.jpg" alt="photoAvatar" class="roundAvatar">
-                <div class="blockNameDate">
-                    <div class="nicknamePost">
-                        zinchenko_96
-                    </div>
-                    <div class="datePhoto">
-                        5 february 2018
-                    </div>
-                </div>
-            </div>
-            <div class="text">
-                Too easy against this guy @bernardocarvalhosilva 🤣🤣🤣 </div>
-            <div class="photoPlace">
-                <img src="temp/zinchenkoPlay.jpg" alt="photoPost" class="photo">
-            </div>
-            <div class="likeAndHashtags">
-                <a href="#"><img src="image/redheart.png" alt="Like" class="like"></a>
-                <img src="image/line.png" alt="divider" class="lineLikeAndHashtags">
-                <span class="hashtagInPost">#MC #MU #Football #win</span>
-            </div>
-        </div>
-    </div>
-
-    <div class= containterPost">
-        <div class="post">
-            <div class="headPost">
-                <div class="buttonHead">
-                    <button><img src="image/waste.png" alt="deletePost" class="deletePost"></button>
-                    <button><img src="image/edit.jpg" alt="editPost" class="editPost"></button>
-                </div>
-                <img src="temp/zinchenko.jpg" alt="photoAvatar" class="roundAvatar">
-                <div class="blockNameDate">
-                    <div class="nicknamePost">
-                        zinchenko_96
-                    </div>
-                    <div class="datePhoto">
-                        5 february 2018
-                    </div>
-                </div>
-            </div>
-            <div class="text">
-                Too easy against this guy @bernardocarvalhosilva 🤣🤣🤣 </div>
-            <div class="photoPlace">
-                <img src="temp/zinchenkoPlay.jpg" alt="photoPost" class="photo">
-            </div>
-            <div class="likeAndHashtags">
-                <a href="#"><img src="image/redheart.png" alt="Like" class="like"></a>
-                <img src="image/line.png" alt="divider" class="lineLikeAndHashtags">
-                <span class="hashtagInPost">#MC #MU #Football #win</span>
-            </div>
-        </div>
-    </div>
+    <section id = "posts">
+    </section>
     <a href = "#" id="buttonDownload">Загрузить ещё</a>
 </main>
 <footer>
@@ -238,6 +63,10 @@
         </ul>
     </div>
 </footer>
+<script src="js/function.js">
+</script>
+<script src="js/Main.js">
+</script>
+
 </body>
-<script src="js/main.js"></script>
 </html>

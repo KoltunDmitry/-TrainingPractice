@@ -11,11 +11,14 @@ header{
     width: 100% ;
     height: 72px;
 }
+main{
+    min-height: 320px;
+}
 #heading{
     background: white;
     border-bottom: 1px black;
 }
-.container{
+#container{
     width:72%;
     height: 60px;
     margin: 0 auto;
@@ -87,13 +90,15 @@ main{
 }
 .nicknamePost{
     float:left;
+    width: 100%;
     margin-left: 5px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
+    margin-top: 1px;
 }
 .datePhoto{
     float:left;
-    font-size: 12px;
+    font-size: 14px;
     margin-left: 5px;
     margin-top: 3px;
 }
@@ -166,6 +171,7 @@ textarea{
     height: 180px;
     weight:0 auto;
     color: white;
+    float: bottom;
 }
 #aboutUs{
     float: left;
@@ -215,6 +221,9 @@ textarea{
     padding-bottom: 10px;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
+}
+.authorInput{
+    width: 100%;
 }
 .hashtagInput{
     width: 100%;
@@ -326,7 +335,7 @@ textarea{
     header{
         height: 72px;
     }
-    .container{
+    #container{
         width:95%;
         height: 60px;
         margin: 0 auto;
@@ -376,7 +385,7 @@ textarea{
     header {
         height: 40px;
     }
-    .container {
+    #container {
         width: 100%;
         height: 40px;;
     }
