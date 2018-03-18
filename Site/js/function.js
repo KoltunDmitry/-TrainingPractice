@@ -1,5 +1,5 @@
 "use strict";
- var functionPost = (function () {
+ var moduleWorkWithChangingPost = function () {
 
     var photoPosts =  [
          {
@@ -128,11 +128,12 @@
      }
      function getAllAuthor(){
         var name = [];
-        photoPosts.forEach(function(item){
+        photoPosts.forEach(function(item) {
 
-             if (!item.isDelete)
-                 name.push(item.author);
-         })
+            if (!item.isDelete) {
+                name.push(item.author);
+            }
+        });
         return unique(name);
  }
      function getAllHashtags() {
@@ -154,12 +155,16 @@
          if(min > photoPosts.length){
              min = photoPosts.length;
          }
-         var newArr = [];
+         var postsNotDeleted = photoPosts.filter(function (post) {
+             if(!post.isDelete){
+                 return true;
+             }
+         });
          if (!filterConfig) {
-             return photoPosts.sort(compareDate).slice(skip,min);
+             return postsNotDeleted.sort(compareDate).slice(skip,min);
          }
          else {
-             var result = photoPosts;
+             var result = postsNotDeleted;
              if (filterConfig.author) {
                  result = result.filter(function (post) {
                      return post.author === filterConfig.author;
@@ -230,26 +235,29 @@
 
 
      function removePhotoPostLabeled(id) {
-         var found = photoPosts.findIndex(i => i.id === id);
-         photoPosts[found].isDelete = true;
+         let post = photoPosts.find(post => post.id === id);
+         if(post){
+             post.isDelete = true;
+         }
      }
 
      function editPhotoPost(id, object) {
-         var found = photoPosts.findIndex(i => i.id === id);
-         if(found!== -1){
+         let post = photoPosts.find(post => post.id === id);
+         if(post && post.isDelete === false){
              if(object.description && object.description){
-                 photoPosts[found].description = object.description;
+                 post.description = object.description;
              }
              if(object.hashTag && object.hashTag.length!==0){
-                 photoPosts[found].hashTag = [];
-                 photoPosts[found].hashTag.concat(object.hashTag);
+                 post.hashTag = [];
+                 post.hashTag.concat(object.hashTag);
              }
              if(object.photoLink && object.photoLink!==0) {
-                 photoPosts[found].photoLink = object.photoLink;
+                 post.photoLink = object.photoLink;
              }
          }
      }
-     console.log(getPhotoPosts(0,5,{author:"Дмитриев Дмитрий"}));
+     removePhotoPostLabeled("3");
+     console.log(getPhotoPosts(0,5));
      return {
          getPhotoPosts,
          getPhotoPost,
@@ -260,4 +268,4 @@
          getAllAuthor,
          getAllHashtags
      }
- }());
+ }();

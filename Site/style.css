@@ -330,6 +330,12 @@ textarea{
         width: 90%;
         margin-left: 5%;
     }
+    #nicknameHeader{
+        float:right;
+        margin-right: 3px;
+        margin-top: 10px;
+        font-size: 0;
+    }
 }
 @media  screen and (max-width: 530px) {
     header{
@@ -369,12 +375,6 @@ textarea{
         weight:35px;
         height: 35px;
         float:right;
-    }
-    #nicknameHeader{
-        float:right;
-        margin-right: 3px;
-        margin-top: 10px;
-        font-size: 12px;
     }
     #filtering{
         margin:auto;
@@ -422,12 +422,6 @@ textarea{
         float: right;
     }
 
-    #nicknameHeader {
-        float: right;
-        margin-right: 3px;
-        margin-top: 5px;
-        font-size: 10px;
-    }
 
     #footer {
         height: 400px;

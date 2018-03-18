@@ -1,5 +1,5 @@
 'use strict';
-var MyModule =(function() {
+var MyModule = function() {
 
     var user = "Иванов Иван";
     setNickname();
@@ -91,7 +91,7 @@ var MyModule =(function() {
 
     function addFilterAuthor(){
         var listAuthor = document.getElementById("listAuthor");
-        var nameAuthors = functionPost.getAllAuthor();
+        var nameAuthors = moduleWorkWithChangingPost.getAllAuthor();
         var formDatalist = "";
         nameAuthors.forEach(function (item) {
             formDatalist += "<option>" + item + "</option>";
@@ -100,7 +100,7 @@ var MyModule =(function() {
     }
     function addFilterHashtags(){
         var listHashtags = document.getElementById("suggestions");
-        var nameHashtags = functionPost.getAllHashtags();
+        var nameHashtags = moduleWorkWithChangingPost.getAllHashtags();
         var formDatalist = "";
         nameHashtags.forEach(function (item) {
             formDatalist += "<option>" + item + "</option>";
@@ -126,24 +126,24 @@ var MyModule =(function() {
     function showPosts(skip, top, filterConfig) {
         //document.getElementsByClassName("posts")[0].innerHTML = "";
         update();
-        var photoPosts = functionPost.getPhotoPosts(skip, top, filterConfig);
+        var photoPosts = moduleWorkWithChangingPost.getPhotoPosts(skip, top, filterConfig);
         for (var i = 0; i < photoPosts.length; i++) {
             if(!photoPosts[i].isDelete)
             showPhotoPost(photoPosts[i]);
         }
     }
     function addPhotoPost(post) {
-        functionPost.addPhotoPost(post);
+        moduleWorkWithChangingPost.addPhotoPost(post);
         showPosts(0,10);
     }
 
     function removePhotoPostLabeled(id) {
-        functionPost.removePhotoPostLabeled(id);
+        moduleWorkWithChangingPost.removePhotoPostLabeled(id);
         showPosts(0,10);
     }
 
     function editPost(id,post) {
-        functionPost.editPhotoPost(id, post);
+        moduleWorkWithChangingPost.editPhotoPost(id, post);
         showPosts(0,10);
     }
     function update(){
@@ -188,4 +188,4 @@ var MyModule =(function() {
         addFilterHashtags,
         addFilterAuthor
     };
-})();
+}();
