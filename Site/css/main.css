@@ -1,0 +1,411 @@
+body{
+    font-family: Roboto, sans-serif;
+    background: #fafafa;
+    padding: 0;
+    margin: 0;
+}
+main{
+    margin-top:122px;
+    min-height: 320px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+
+#error b{
+    font-size: 30px;
+}
+#error p{
+    font-size: 24px;
+}
+#error{
+    display: none;
+    text-align: center;
+    margin-top: 160px;
+}
+#addChangePhoto{
+    display: none;
+    min-height: 500px;
+    width:100%;
+}
+#addChangePhoto h1{
+    text-align: center;
+    margin-top: -30px;
+}
+#placeAddPhoto{
+    float: left;
+    margin-top: 0px;
+    background: white;
+    min-height: 300px;
+    max-height: 600px;
+    min-width: 500px;
+    max-width: 600px;
+    margin-left: 30px;
+    text-align: center;
+}
+textarea[readonly]
+{
+    background-color:#D8D8D8;
+}
+#placeAddPhoto b{
+font-size: 24px;
+}
+#placeAddPhoto p{
+    font-size: 18px;
+}
+#textInPlaceAddPhoto{
+    width: 90%;
+    margin: auto;
+    margin-top: 25%;
+}
+#editingPhoto{
+    float: left;
+    margin-left: 150px;
+    width: 400px;
+    height: 400px;
+}
+.filterMargins{
+    font-family: 'Pacifico', cursive;
+    margin-top: 3px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+#filtering{
+    display: none;
+    position:fixed;
+    margin-left: 900px;
+    float: left;
+    margin-top: 55px;
+    width: 200px;
+    height: 20%;
+}
+
+.hashtagInput{
+    width: 100%;
+}
+.authorInput{
+    width: 100%;
+}
+.textFilter{
+    font-size: 18px;
+    color: dimgrey;
+}
+.post{
+    border: 1px solid #b3b3b3;
+    background: white;
+    width: 600px;
+    max-height: 830px;
+    margin-top: 50px;
+    margin-left: 15%;
+}
+.roundAvatar{
+    float:left;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 0px;
+    margin-left: 10px;
+}
+.headPost{
+    height: 60px;
+}
+.nicknamePost{
+    float:left;
+    width: 100%;
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 1px;
+}
+.datePhoto{
+    float:left;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+.blockNameDate{
+    margin-left: 60px;
+    margin-top: 10px;
+    width:180px;
+    height: 40px;
+}
+button{
+    float: right;
+    background: white;
+    width: 7%;
+    height: 7%;
+    border: 1px white;
+}
+#isDelete{
+    display: none;
+    background: white;
+    position: fixed;
+    text-align: center;
+    font-size: 20px;
+    width: 25%;
+    height: 25%;
+    min-height: 100px;
+    min-width: 200px;
+    margin: auto;
+    border: 1px solid black;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+#textIsDelete{
+    width: 100%;
+    height: 65%;
+}
+#textIsDelete b{
+    position:relative;
+    top:25%;
+}
+#btnIsDelete{
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid black;
+}
+#btnIsDelete button{
+    width: 50%;
+    border-right: 1px solid black;
+    height: 33%;
+    font-size: 20px;
+}
+#btnIsDelete button:first-child{
+    border-right: 0px solid black;
+}
+.deletePost{
+    width: 100%;
+    height: 100%;
+}
+.editPost{
+    width: 90%;
+    height: 90%;
+}
+
+.text{
+    width: 100%;
+    max-height: 90px;
+    margin: 0px 10px 10px 10px;
+}
+.photoPlace{
+    max-height: 800px;
+    margin-bottom: 0px;
+}
+.photo{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#hashtagsFieldsEditPost,#urlFieldsEditPost, #nameFieldsEditPost, #dateFieldsEditPost{
+    width: 350px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#nameFieldsEditPost{
+    margin-top: 0px;
+}
+#descriptionFieldsEditPost{
+    width: 350px;
+    height: 120px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#btnEdit{
+    width: 100px;
+    height: 40px;
+    margin-top: 20px;
+    margin-right: 150px;
+    border: 1px solid black;
+}
+@media screen and (max-width: 1100px) {
+    #addChangePhoto{
+        width: 100%;
+    }
+    #placeAddPhoto{
+        float: none;
+        width: 600px; /* Ширина слоя в пикселах */
+        margin: 0 auto
+    }
+    #editingPhoto{
+        float: none;
+        width: 350px;
+        margin: 20px auto 0px auto;
+
+    }
+    .fieldsEditPost, #nameFieldsEditPost, #dateFieldsEditPost{
+        width: 70%;
+    }
+    .description{
+        width: 70%;
+    }
+    .btnEdit{
+        margin-left: 30%;
+    }
+}
+@media screen and (max-width: 630px) {
+    #addChangePhoto{
+        width: 100%;
+    }
+    #placeAddPhoto{
+        float: none;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+    }
+    #editingPhoto{
+        float: none;
+        display: block;
+        max-width: 90%;
+        max-height: 90%;
+
+    }
+}
+@media screen and (max-width: 350px) {
+    .btnEdit{
+        margin-right: 20%;
+    }
+}
+textarea{
+    width: 100%;
+    resize: none;
+}
+.likeAndHashtags{
+    height: 50px;
+}
+.like{
+    float: left;
+    weight:90%;
+    height: 90%;
+    margin-left: 1%;
+}
+.lineLikeAndHashtags
+{
+    float: left;
+    margin-left: 5px;
+    height: 50px;
+    width: 5px;
+}
+.hashtagInPost{
+    font-family: 'Pacifico', cursive;
+    float: left;
+    margin-top: 10px;
+    margin-left: 1%;
+}
+#buttonSearch{
+    width: 110px;
+    background: slategrey;
+    display: block;
+    margin: 10px auto auto auto;
+    padding: 5px;
+    text-align: center;
+    border: 1px sandybrown;
+    text-decoration: none;
+    border-radius:70px;
+    color: black;
+}
+
+
+#buttonDownload{
+    display: none;
+    width: 110px;
+    background: slategrey;
+    margin-top: 50px;
+    margin-left: 35%;
+    padding: 10px;
+    border: 1px sandybrown;
+    text-decoration: none;
+    border-radius:70px;
+    color: black;
+    font-family: 'Pacifico', cursive;
+}
+@media screen and (min-width: 1367px) {
+    #filtering {
+        margin-left:950px;
+    }
+    #buttonDownload{
+        margin-left: 38%;
+    }
+}
+@media screen and (max-width: 1070px) {
+    #filtering{
+        margin-left: 800px;
+
+    }
+    #buttonDownload{
+        margin-left: 40%;
+    }
+}
+@media  screen and (max-width: 1000px) {
+    #filtering {
+        margin-left: 760px;
+    }
+
+}
+@media  screen and (max-width: 950px) {
+    #filtering{
+        float: none;
+        display: block;
+        position: static;
+        width: 300px;
+        margin: auto;
+    }
+    .post{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .likeAndHashtags{
+        height:50px;
+    }
+    .buttonDownload{
+        margin-left: 43%;
+    }
+    @media  screen and (max-width: 808px) {
+        .likeAndHashtags{
+            height:50px;
+        }
+    }
+    @media  screen and (max-width: 630px) {
+        button{
+            width: 10%;
+            height: 10%;
+        }
+        .post{
+            width: 90%;
+            margin-left: 5%;
+        }
+    }
+    @media  screen and (max-width: 530px) {
+        button{
+            width: 13%;
+            height: 13%;
+        }
+        #filtering{
+            margin:auto;
+        }
+    }
+}
+@media  screen and (max-width: 330px) {
+    #filtering{
+        width: 150px;
+    }
+    .nicknamePost{
+        font-size: 13px;
+        width: 70%;
+    }
+    button{
+        width: 15%;
+        height: 15%;
+    }
+
+    .hashtagInPost {
+        float: left;
+        margin-top: 15px;
+        margin-left: 1%;
+    }
+}
+@media  screen and (max-width: 250px) {
+    button{
+        width: 20%;
+        height: 20%;
+    }
+}

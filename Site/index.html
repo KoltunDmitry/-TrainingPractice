@@ -4,7 +4,13 @@
     <link rel="SHORTCUT ICON" href="image/cheese.ico" type="image/x-icon">
     <meta charset="UTF-8">
     <title>Cheese</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel = "stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet"  href="css/css/fontawesome-all.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Pacifico|Ubuntu+Condensed" rel="stylesheet">
+
+
 </head>
 <body>
 <header>
@@ -14,27 +20,79 @@
             <div class="title">
                 <a href="#" id = "titleReference"><h1>cheese</h1></a>
             </div>
-            <div id = "containerProfile">
+            <div id="wrap">
+                <nav id="menu">
+                    <ul>
+                        <li>Вход
+                            <ul>
+                                <li>
+                                    <strong>Логин:</strong>
+                                    <input maxlength="16" size="16" name="login" id = "login">
+                                </li>
+                                <li>
+                                    <strong>Пароль:</strong>
+                                    <input type="password" maxlength="16" size="16" name="password" id = "password"></p>
+                                </li>
+                                <li><button id="sign"><b>Войти</b></button></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
             </div>
-            <div id="nicknameHeader">
-                
+            <div id="cover">
+                <nav id="signIn">
+                    <ul>
+                        <li>
+                            <i class="fas fa-user fa-3x"></i>
+                            <div id = "containerNickname">
+                            </div>
+                            <ul>
+                                <a href="#" id = "addPhoto"><li>Добавить фото</li></a>
+                                <a href = "#" id = "logOut"><li>Выйти</li></a>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
-        <hr/>
+    </div>
     </div>
 </header>
 <main>
+    <div id = "error">
+        <b> К сожалению, эта страница недоступна.  </b>
+        <p>Возможно, вы воспользовались недействительной ссылкой или страница была удалена.</p>
+    </div>
+    <div id = "addChangePhoto">
+        <h1>Добавление/редактирование фотопоста</h1>
+        <div id = "placeAddPhoto">
+            <!--<div id = "textInPlaceAddPhoto">
+                <b>Так будет выглядеть ваша фотография</b>
+            <p>Для корректного отображения картинки, минимальный размер фотографии 600х300 пикселей</p>
+            -->
+        </div>
+        <div id = "editingPhoto">
+        <textarea placeholder="Имя автора" cols="40" rows="1" id="nameFieldsEditPost" readonly></textarea>
+        <textarea placeholder="Дата добавления" cols="40" rows="1" id="dateFieldsEditPost" readonly>Дата</textarea>
+        <textarea placeholder="URL-адресс фотографии" cols="40" rows="1" id = "urlFieldsEditPost"></textarea>
+        <textarea placeholder="Хэштеги" cols="40" rows="1" id="hashtagsFieldsEditPost"></textarea>
+            <textarea placeholder="Описание:" cols="40" rows="1" id="descriptionFieldsEditPost"></textarea>
+            <button id="btnEdit">Применить изменения</button>
+        </div>
+    </div>
     <aside id ="filtering">
         <a class ="textFilter">Фильтровать по:</a>
         <div class="filterMargins">
-        <input type="radio" name="nameAuthor" value="nameAuthor">Имени автора:
-        <input type ="nameInput" class = "authorInput" list = "listAuthor">
+            Имени автора:
+        <input type ="nameInpdt" class = "authorInput" list = "listAuthor" id = "nameInput">
             <datalist id = "listAuthor">
             </datalist>
-            <input type="radio"  name="date" value="date">Дате<Br>
-            <textarea name="dateInput" placeholder="Формат: ДД/ММ/ГГ" cols="40" rows="1"></textarea>
-        <input type="radio" name="hashtag" value="hashtag">Хэштегу<Br>
-        <input type = "hashtagInput" class="hashtagInput" list="suggestions">
+            Дате:
+            <textarea name="dateInput" placeholder="Формат: ДД/ММ/ГГ" cols="40" rows="1" id = "dateInput"></textarea>
+        Хэштегу
+        <input type = "hashtagInput" class="hashtagInput" list="suggestions" id = "hashtagInput">
         <datalist id = "suggestions" >
         </datalist>
             <a href = "#" id="buttonSearch">Поиск</a>
@@ -42,6 +100,13 @@
     </aside>
     <section id = "posts">
     </section>
+    <div id="isDelete">
+        <div id="textIsDelete"><b>Вы действительно хотите удалить пост?</b></div>
+        <div id="btnIsDelete">
+            <button id = "noDelete"><b>Нет</b></button>
+            <button id = "yesDelete"><b>Да</b></button>
+        </div>
+    </div>
     <a href = "#" id="buttonDownload">Загрузить ещё</a>
 </main>
 <footer>
@@ -64,10 +129,13 @@
         </ul>
     </div>
 </footer>
-<script src="js/function.js">
-</script>
-<script src="js/Main.js">
-</script>
+<script src="js/functional.js"></script>
+<script src="js/localStorageJSON.js"></script>
+<script src="js/event.js"></script>
+<script src="js/DOM.js"></script>
+
+
+
 
 </body>
 </html>

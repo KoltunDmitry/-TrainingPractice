@@ -1,9 +1,10 @@
 body{
-    font-family: Arial,sans-serif;
+    font-family: Roboto, sans-serif;
     background: #fafafa;
     padding: 0;
     margin: 0;
 }
+
 header{
     position: fixed;
     top:0px;
@@ -14,9 +15,10 @@ header{
 main{
     min-height: 320px;
 }
+
 #heading{
     background: white;
-    border-bottom: 1px black;
+    border-bottom: 1px solid gainsboro;
 }
 #container{
     width:72%;
@@ -35,7 +37,7 @@ main{
     float:right;
 }
 .title h1                                               {
-    font-family: Tahoma,sans-serif;
+    font-family: Roboto,sans-serif;
     font-weight: bold;
     font-size: 28px;
     text-transform: uppercase;
@@ -47,7 +49,9 @@ main{
 
 #logo{
     float:left;
-    margin-top: 1px;
+    margin-top: 5px;
+    height: 50px;
+    width: 50px;
     padding-right: 7px;
 }
 .arrow-icon{
@@ -60,6 +64,12 @@ main{
     margin-top: 10px;
     margin-right: 5px;
     float:right;
+}
+#signIn{
+    float: right;
+    margin-right: 10%;
+    font-size: 20px;
+
 }
 #nicknameHeader{
     float:right;
@@ -109,10 +119,8 @@ main{
     height: 40px;
 }
 button{
-    background: white;
-    margin-right: 0px;
-    margin-top: 0px;
     float: right;
+    background: white;
     width: 7%;
     height: 7%;
     border: 1px white;
@@ -139,6 +147,7 @@ button{
     max-width: 100%;
     max-height: 100%;
 }
+
 
 textarea{
     width: 100%;
@@ -209,7 +218,7 @@ textarea{
 }
 #filtering{
     position: fixed;
-    left:850px;
+    margin-left: 900px;
     float: left;
     margin-top: 0px;
     width: 200px;
@@ -326,6 +335,10 @@ textarea{
     }
 }
 @media  screen and (max-width: 630px) {
+    button{
+        width: 10%;
+        height: 10%;
+    }
     .post{
         width: 90%;
         margin-left: 5%;
@@ -338,41 +351,29 @@ textarea{
     }
 }
 @media  screen and (max-width: 530px) {
-    header{
-        height: 72px;
+    button{
+        width: 13%;
+        height: 13%;
     }
-    #container{
-        width:95%;
-        height: 60px;
-        margin: 0 auto;
+    ul.submenu {
+        display: none;
+        position: absolute;
+        width: 100px;
+        margin-top: 100%;
+        padding-right: 1px;
+        background-color: white;
+        border: 1px solid gainsboro;
     }
     .line{
         float:left;
         margin-top: 5px;
         margin-left: 10px;
     }
-    .title h1{
-       font-size: 18px;
-        margin-top: 20px;
-    }
-    #logo{
-        float:left;
-        margin-top: 13px;
-        weight:35px;
-        height: 35px;
-        border-bottom: 1px solid red;
 
-    }
-    .arrow-icon{
-        margin-top: 25px;
-        width: 8px;
-        height: 8px;
-        float:right;
-    }
     #profile{
         margin-top: 15px;
         margin-right: 3px;
-        weight:35px;
+        width:35px;
         height: 35px;
         float:right;
     }
@@ -382,14 +383,31 @@ textarea{
 }
 }
 @media  screen and (max-width: 330px) {
+    .nicknamePost{
+        font-size: 13px;
+        width: 70%;
+    }
+    button{
+        width: 15%;
+        height: 15%;
+    }
     header {
-        height: 40px;
+        height: 50px;
     }
     #container {
-        width: 100%;
+        width: 80%;
         height: 40px;;
     }
-
+    ul.submenu {
+        font-size: 9px;
+        display: none;
+        position: absolute;
+        width: 80px;
+        margin-top: 96%;
+        padding-right: 1px;
+        background-color: white;
+        border: 1px solid gainsboro;
+    }
     .line {
         float: left;
         margin-top: 5px;
@@ -401,12 +419,7 @@ textarea{
         font-size: 0px;
     }
 
-    #logo {
-        margin-top: 10px;
-        weight: 25px;
-        height: 25px;
 
-    }
 
     .arrow-icon {
         margin-top: 22px;
@@ -417,7 +430,7 @@ textarea{
     #profile {
         margin-top: 10px;
         margin-right: 3px;
-        weight: 25px;
+        width: 25px;
         height: 25px;
         float: right;
     }
@@ -432,5 +445,11 @@ textarea{
         font-size: 3vw;
         margin-top: 15px;
         margin-left: 1%;
+    }
+}
+@media  screen and (max-width: 250px) {
+    button{
+        width: 20%;
+        height: 20%;
     }
 }
