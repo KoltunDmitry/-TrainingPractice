@@ -1,4 +1,4 @@
-var currentID = 100;
+var currentID = localStorage.getItem('currentID');
 function setLikeOnPost(id) {
     let post = moduleWorkWithChangingPost.getPhotoPost(id);
     post.like.push(user);
@@ -68,9 +68,11 @@ function addEventEditPost() {
         })
     }
 }
+
 var addPhoto = document.getElementById("addPhoto");
 addPhoto.addEventListener("click", function () {
     DOM.createPhotoPost();
+    document.getElementById('urlFieldsEditPost').value = '';
     btnAddPost();
 });
 function addEventDeletePost() {
@@ -130,14 +132,14 @@ mainPage.addEventListener("click", function () {
     DOM.showPosts(0, 10);
 });
 function btnAddPost() {
-    let btnAddPost = document.getElementById('btnEdit');
+    let btnAddPost = document.getElementById('btnAdd');
     btnAddPost.addEventListener("click", function () {
         var date = document.getElementById("dateFieldsEditPost").value;
         var url = document.getElementById("urlFieldsEditPost").value;
         var hashtags = document.getElementById('hashtagsFieldsEditPost').value;
         var description = document.getElementById('descriptionFieldsEditPost').value;
         var post = {
-            id: Number(currentID++).toString(),
+            id: Number(++currentID).toString(),
             description: description,
             createdAt: new Date(),
             author: DOM.getUser(),
@@ -146,9 +148,9 @@ function btnAddPost() {
             like: [],
             isDelete: false
         };
+        localStorage.setItem('currentID',currentID);
         moduleWorkWithChangingPost.addPhotoPost(post);
         DOM.showPosts(0, 10);
-        DOM.clearEditPost();
     });
 }
 function btnEditPost(id) {
@@ -162,14 +164,12 @@ function btnEditPost(id) {
         };
         moduleWorkWithChangingPost.editPhotoPost(id, post);
         DOM.showPosts(0, 10);
-        DOM.clearEditPost();
-
     });
 }
 function btnDownloadMore() {
     let downloadMore = document.getElementById('buttonDownload');
     downloadMore.addEventListener('click',function (e) {
         e.preventDefault();
-        DOM.showPosts(0,showedPosts+10);
+        DOM.showPosts(0,showedPosts+10,'lastConfig');
     });
 }

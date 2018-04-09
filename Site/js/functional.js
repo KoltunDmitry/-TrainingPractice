@@ -21,8 +21,8 @@ var moduleWorkWithChangingPost = function () {
             hashTag: ["#20!8"],
             like: ["Иванов Иван"],
             isDelete: false,
-        },
-        {
+        }];*/
+        /*{
             id: '2',
             description: '2',
             createdAt: new Date('2018-10-23T17:00:00'),
@@ -276,8 +276,13 @@ var moduleWorkWithChangingPost = function () {
         return date;
     }
     function compareDate(a, b) {
-        return b.createdAt - a.createdAt;
-    }
+        if(!(a instanceof Date)){
+            return new Date(b.createdAt) - new Date(a.createdAt);
+        }
+        else{
+            return b.createdAt - a.createdAt;
+        }
+}
 
     function unique(arr) {
         var obj = {};

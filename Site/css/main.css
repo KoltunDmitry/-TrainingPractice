@@ -210,7 +210,7 @@ button{
     margin-top: 20px;
     margin-left: 20px;
 }
-#btnEdit{
+#btnEdit,#btnAdd{
     width: 100px;
     height: 40px;
     margin-top: 20px;
