@@ -1,0 +1,204 @@
+header{
+    position: fixed;
+    top:0px;
+    left: 0px;
+    width: 100% ;
+    height: 60px;
+    background-color: white;
+    font-family: 'Ubuntu Condensed', sans-serif;
+}
+#heading{
+
+    border-bottom: 1px solid gainsboro;
+}
+#container{
+    width:72%;
+    height: 60px;
+    margin: 0 auto;
+
+}
+.line{
+    float:left;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.title h1                                               {
+    font-family: Roboto,sans-serif;
+    font-weight: bold;
+    font-size: 28px;
+    text-transform: uppercase;
+    float:left;
+    margin-top: 15px;
+    margin-left: 7px;
+    color: black;
+}
+
+#logo{
+    float:left;
+    margin-top: 5px;
+    height: 50px;
+    width: 50px;
+    padding-right: 7px;
+}
+
+#userPhoto{
+    width: 40px;
+    height:40px;
+    float: right;
+    margin-top: 10px;
+}
+
+#nicknameHeader{
+    float:right;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 0px;
+}
+
+.fa-user{
+    float: right;
+    margin-top: -10px;
+    margin-left: 5px;
+}
+#containerNickname{
+    float: left;
+}
+.nickname{
+    margin-right: 2px;
+    margin-top: 0px;
+}
+#wrap {
+    margin: 0px;
+    float:right;
+}
+
+#menu {
+    display:none;
+    float: left;
+    height:60px;
+    background:#E6E6E6;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+}
+
+#cover{
+    margin: 0px;
+    float:right;
+}
+#signIn{
+    display: none;
+    float: left;
+    height:60px;
+    background:#E6E6E6;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+#sign{
+    width: auto;
+    height: auto;
+    padding: 5px;
+    margin-right: 50px;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    border: 2px solid black;
+}
+#heading a:link {color: #4a4a4a; text-decoration:none;}
+#heading a:visited {color: #4a4a4a; text-decoration:none; color:inherit;}
+#heading a:hover {text-decoration:none;}
+#heading a:active {text-decoration:none;}
+
+#heading ul {
+    text-align: left;
+    display: inline;
+    margin: 0;
+    padding: 20px 4px 17px 0;
+    list-style: none;
+
+}
+
+#heading ul li {
+    height: 30px;
+    font-size: 18px;
+    color: #4a4a4a;
+    display: inline-block;
+    margin-right: -4px;
+    position: relative;
+    padding: 15px 20px;
+    background: white;
+    cursor: pointer;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+}
+
+#heading ul li:hover {
+    background: gainsboro;
+    color: #666;
+    opacity:1;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+}
+
+#heading ul li ul  {
+    padding: 0;
+    position: absolute;
+    top: 60px;
+    left:0px;
+    width: 190px;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transiton: opacity 0.5s;
+    -moz-transition: opacity 0.5s;
+    -ms-transition: opacity 0.5s;
+    -o-transition: opacity 0.5s;
+    -transition: opacity 0.5s;
+
+}
+
+#heading ul li ul li {
+    background: #e6e6e6;
+    display: block;
+    color: #666;
+}
+
+#heading ul li ul li:hover {
+    margin-top:5px;
+    margin-bottom:5px;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);}
+#heading ul li:hover ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+@media only screen and (max-width: 600px){
+    .nickname{
+        font-size: 0;
+    }
+    #container{
+        width: 100%;
+        border: 1px solid black;
+    }
+    #heading ul li ul{
+        left: -100px;
+    }
+}
+@media only screen and (max-width: 300px){
+    .title h1{
+        font-size: 0;
+    }
+}
+
