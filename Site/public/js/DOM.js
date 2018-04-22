@@ -84,10 +84,10 @@ var DOM = function() {
 
     function setNickname() {
         clearNickname();
-        document.getElementById('signIn').style.display = 'none';
+        document.getElementById('forEntered').style.display = 'none';
         document.getElementById('menu').style.display = 'none';
         if (user) {
-            document.getElementById('signIn').style.display = 'inline';
+            document.getElementById('forEntered').style.display = 'inline';
             let a = document.createElement('a');
             a.setAttribute('href', '#');
             a.className = 'nickname';
