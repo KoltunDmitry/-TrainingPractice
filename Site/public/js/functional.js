@@ -11,7 +11,9 @@ var moduleWorkWithChangingPost = function () {
         }
         ];
     var photoPosts = JSON.parse(localStorage.getItem('Posts'));
-
+    if(!photoPosts){
+        photoPosts = [];
+    }
         /*[{
             id: '1',
             description: '1',
@@ -272,7 +274,7 @@ var moduleWorkWithChangingPost = function () {
     function splitDate(strDate) {
         var date = strDate.split("/");
         date[0] = Number(date[0]);
-        date[1] = Number(--date[1]);
+        date[1] = Number(date[1]);
         date[2] = Number(date[2]);
         return date;
     }
@@ -321,6 +323,9 @@ var moduleWorkWithChangingPost = function () {
     function getPhotoPosts(skip = 0, top, filterConfig) {
         skip = skip || 0;
         top = top || 0;
+        if(!photoPosts){
+            return null;
+        }
         var min = top;
         if (min > photoPosts.length) {
             min = photoPosts.length;
@@ -368,18 +373,20 @@ var moduleWorkWithChangingPost = function () {
         return found;
     }
 
-    function validatePhotoPost(post, isForAddPost) {
+    function validatePhotoPost(post) {
         var isValidate = true;
         if (typeof post.id !== "string" || typeof post.description !== "string"
             || typeof post.author !== "string" || typeof post.photoLink !== "string"
             || !(post.createdAt instanceof Date) || !(post.hashTag instanceof Array)) {
             return false
         }
-        photoPosts.forEach(function (item) {
-            if (item.id === post.id) {
-                return false;
-            }
-        });
+        if(photoPosts) {
+            photoPosts.forEach(function (item) {
+                if (item.id === post.id) {
+                    return false;
+                }
+            });
+        }
         if (post.description.length === 0 || post.description.length >= 200) {
             return false;
         }

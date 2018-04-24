@@ -64,12 +64,12 @@ function like(e) {
         removeLike(e.target.getAttribute('value'));
     }
 }
-
+btnAddPost();
 var addPhoto = document.getElementById("addPhoto");
 addPhoto.addEventListener("click", function () {
     DOM.createPhotoPost();
     document.getElementById('urlFieldsEditPost').value = '';
-    btnAddPost();
+
 });
 function btnAddPost() {
     let btnAddPost = document.getElementById('btnAdd');
@@ -151,6 +151,6 @@ function btnDownloadMore() {
     let downloadMore = document.getElementById('buttonDownload');
     downloadMore.addEventListener('click',function (e) {
         e.preventDefault();
-        DOM.showPosts(0,showedPosts+10,'lastConfig');
+        DOM.showPosts(0,DOM.getShowedPosts()+10,'lastConfig');
     });
 }

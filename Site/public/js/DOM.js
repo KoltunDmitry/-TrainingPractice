@@ -200,7 +200,9 @@ var DOM = function() {
             setFilter();
         }
         let photoPosts = moduleWorkWithChangingPost.getPhotoPosts(skip, top, filterConfig);
-
+        if(!photoPosts){
+            return;
+        }
         console.log('Begin:' + photoPosts.length);
         for (let i = 0; i < photoPosts.length; i++) {
             if (!photoPosts[i].isDelete) {
@@ -280,3 +282,4 @@ var DOM = function() {
         getShowedPosts
     };
 }();
+
