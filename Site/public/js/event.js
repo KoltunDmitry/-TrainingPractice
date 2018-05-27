@@ -27,7 +27,6 @@ function removeLike(id) {
 }
 document.body.addEventListener("click", function(event
 ) {
-    console.log(event.target.className);
     let id = event.target.getAttribute('value');
     if (event.target.className === 'buttonEdit') {
         DOM.setEditPost(id);

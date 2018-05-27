@@ -87,6 +87,7 @@ var DOM = function() {
         document.getElementById('forEntered').style.display = 'none';
         document.getElementById('menu').style.display = 'none';
         if (user) {
+
             document.getElementById('forEntered').style.display = 'inline';
             let a = document.createElement('a');
             a.setAttribute('href', '#');
@@ -114,24 +115,7 @@ var DOM = function() {
         document.getElementById('error').style.display = 'block';
     }
 
-    /*function example(auth) {
-        //1
-        var element = document.createElement('div')
-        element.innerHTML = `
-            <div class="header">${auth}</div>
-            <button />
-        `;
-        //2
 
-        var container = document.querySelector('.posts');
-        var template = document.getElementById('tmp-post');
-        var elementCopy = document.importNode(
-            template.content,
-            true // deep
-        ); // we get copy of article that are ready but not in the dom
-        elementCopy.querySelector('.author').textContent = auth;
-        container.appendChild(elementCopy);
-    }*/
     function setEditPost(id) {
         clear();
         let post = moduleWorkWithChangingPost.getPhotoPost(id);
@@ -213,9 +197,6 @@ var DOM = function() {
         if (showedPosts % 10 === 0 && showedPosts !== 0) {
             setButtonDownload();
         }
-        //addEventLike();
-        //addEventEditPost();
-        //addEventDeletePost();
         addFilterAuthor();
         addFilterHashtags();
         saveDataToLocalStorage();
@@ -282,4 +263,3 @@ var DOM = function() {
         getShowedPosts
     };
 }();
-

@@ -10,6 +10,7 @@ var moduleWorkWithChangingPost = function () {
             password : 'qwerty'
         }
         ];
+
     var photoPosts = JSON.parse(localStorage.getItem('Posts'));
     if(!photoPosts){
         photoPosts = [];
@@ -279,13 +280,13 @@ var moduleWorkWithChangingPost = function () {
         return date;
     }
     function compareDate(a, b) {
-        if(!(a instanceof Date)){
+        if (!(a instanceof Date)) {
             return new Date(b.createdAt) - new Date(a.createdAt);
         }
-        else{
+        else {
             return b.createdAt - a.createdAt;
         }
-}
+    }
 
     function unique(arr) {
         var obj = {};
@@ -299,9 +300,8 @@ var moduleWorkWithChangingPost = function () {
     function getAllAuthor() {
         var name = [];
         photoPosts.forEach(function (item) {
-
             if (!item.isDelete) {
-                name.push(item.author);
+                name.push(item);
             }
         });
         return unique(name);
@@ -320,7 +320,7 @@ var moduleWorkWithChangingPost = function () {
         return unique(hashtags);
     }
 
-    function getPhotoPosts(skip = 0, top, filterConfig) {
+    function getPhotoPosts(skip, top, filterConfig) {
         skip = skip || 0;
         top = top || 0;
         if(!photoPosts){
@@ -436,7 +436,7 @@ var moduleWorkWithChangingPost = function () {
             }
         }
     }
-    function isMorePosts(top) {
+    function hasMorePosts(top) {
         for(let i = top; i < photoPosts.length;i++){
             if(!photoPosts[i].isDelete){
                 return true;
@@ -444,7 +444,7 @@ var moduleWorkWithChangingPost = function () {
         }
         return false;
     }
-    function isCorrectLoginPassord(login,password) {
+    function isCorrectLoginPassword(login,password) {
         let account = accountBase.find(account => account.login === login);
         return login;
         if(account && account.password === password){
@@ -478,25 +478,23 @@ var moduleWorkWithChangingPost = function () {
         }
         return false;
     }
-
     /*var post = {
         description: "dsf",
         photoLink: "link",
         hashTag: ["#dima", "#more"],
     };
     editPhotoPost("8",post);*/
-    console.log("Dima");
     return {
         getPhotoPosts,
         getPhotoPost,
         validatePhotoPost,
-        isMorePosts,
+        hasMorePosts,
         addPhotoPost,
         editPhotoPost,
         removePhotoPostLabeled,
         getAllAuthor,
         getAllHashtags,
-        isCorrectLoginPassord,
+        isCorrectLoginPassword,
         formatDate,
         splitDate,
         makeArrayHashtagsFromString,

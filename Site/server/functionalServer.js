@@ -1,18 +1,14 @@
 "use strict";
 var moduleWorkWithChangingPost = function () {
-    var accountBase = [
-        {
-            login: 'Иванов Иван',
-            password: '12345',
-        },
-        {
-            login: 'Васильев Василий',
-            password : 'qwerty'
-        }
-    ];
+
     const fs = require('fs');
+
+    const jsonUsers = fs.readFileSync('/Users/DIMA/Desktop/EducationalPractice/Site/server/data/users.json')
+
     const jsonPosts = fs.readFileSync('/Users/DIMA/Desktop/EducationalPractice/Site/server/data/posts.json');
 
+    var users = [];
+    users = JSON.parse(jsonUsers);
     var photoPosts = [];
     photoPosts = JSON.parse(jsonPosts);
 
@@ -58,13 +54,12 @@ var moduleWorkWithChangingPost = function () {
 
     function getAllAuthor() {
         var name = [];
-        photoPosts.forEach(function (item) {
-
+        users.forEach(function (item) {
             if (!item.isDelete) {
-                name.push(item.author);
+                name.push(item);
             }
         });
-        return unique(name);
+        return name;
     }
 
     function getAllHashtags() {
@@ -80,7 +75,7 @@ var moduleWorkWithChangingPost = function () {
         return unique(hashtags);
     }
 
-    function getPhotoPosts(skip = 0, top, filterConfig) {
+    function getPhotoPosts(skip, top, filterConfig) {
         skip = skip || 0;
         top = top || 0;
         if(!photoPosts){
@@ -216,7 +211,7 @@ var moduleWorkWithChangingPost = function () {
             return false;
         }
     }
-    function isMorePosts(top) {
+    function hasMorePosts(top) {
         for(let i = top; i < photoPosts.length;i++){
             if(!photoPosts[i].isDelete){
                 return true;
@@ -224,8 +219,8 @@ var moduleWorkWithChangingPost = function () {
         }
         return false;
     }
-    function isCorrectLoginPassord(login,password) {
-        let account = accountBase.find(account => account.login === login);
+    function isCorrectLoginPassword(login,password) {
+        let account = jsonUsers.find(account => account.login === login);
         return login;
         if(account && account.password === password){
             return login;
@@ -258,25 +253,18 @@ var moduleWorkWithChangingPost = function () {
         }
         return false;
     }
-    editPhotoPost('1',{ id: '1',
-        description: '1s',
-        createdAt: '2018-09-23T23:00:00',
-        author: 'Иванов Иван',
-        photoLink: 'asd',
-        hashTag: [ '#20!8' ],
-        like: [ 'Иванов Иван' ],
-        isDelete: 'false' });
+
     return {
         getPhotoPosts,
         getPhotoPost,
         validatePhotoPost,
-        isMorePosts,
+        hasMorePosts,
         addPhotoPost,
         editPhotoPost,
         removePhotoPostLabeled,
         getAllAuthor,
         getAllHashtags,
-        isCorrectLoginPassord,
+        isCorrectLoginPassword,
         formatDate,
         splitDate,
         makeArrayHashtagsFromString,
