@@ -84,10 +84,10 @@ var DOM = function() {
 
     function setNickname() {
         clearNickname();
-        document.getElementById('signIn').style.display = 'none';
+        document.getElementById('forEntered').style.display = 'none';
         document.getElementById('menu').style.display = 'none';
         if (user) {
-            document.getElementById('signIn').style.display = 'inline';
+            document.getElementById('forEntered').style.display = 'inline';
             let a = document.createElement('a');
             a.setAttribute('href', '#');
             a.className = 'nickname';
@@ -200,7 +200,9 @@ var DOM = function() {
             setFilter();
         }
         let photoPosts = moduleWorkWithChangingPost.getPhotoPosts(skip, top, filterConfig);
-
+        if(!photoPosts){
+            return;
+        }
         console.log('Begin:' + photoPosts.length);
         for (let i = 0; i < photoPosts.length; i++) {
             if (!photoPosts[i].isDelete) {
@@ -280,3 +282,4 @@ var DOM = function() {
         getShowedPosts
     };
 }();
+
