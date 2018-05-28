@@ -2,6 +2,8 @@
     class PhotoPostsCollection {
         constructor() {
             this.list = [];
+            console.log("5");
+            this.getPhotoPosts(0,10);
         }
 
         getPhotoPosts(skip, top, filterConfig) {
@@ -134,12 +136,23 @@
                 });
         }
 
+        makeArrayHashtagsFromString(str) {
+            return str.split(" ");
+        }
+        splitDate(strDate) {
+            var date = strDate.split("/");
+            date[0] = Number(date[0]);
+            date[1] = Number(date[1]);
+            date[2] = Number(date[2]);
+            return date;
+        }
+
     }
     class Users{
-        constructor(){
-            this.list = [];
+        constructor() {
+            this.users = [];
         }
-        findUsers(login){
+        findUsers(login) {
             let found = list.find(function (element) {
                 return element.login === login;
             });
@@ -163,6 +176,17 @@
                     throw error;
                 });
         }
+        isCorrectLoginPassword(login,password) {
+            let account = this.users.find(account => account.login === login);
+            return login;
+            if(account && account.password === password){
+                return login;
+            }
+            else{
+                return false;
+            }
+        }
+
     }
     function compareDate(a, b) {
         if (!(a instanceof Date)) {
