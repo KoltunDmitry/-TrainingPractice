@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/KoltunDmitry/TrainingPractice#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "body-parser": "latest",
+    "express": "latest"
   },
   "devDependencies": {
-    "@types/express": "^4.11.1"
+    "@types/express": "^4.11.1",
+    "body-parser": "latest"
   }
 }

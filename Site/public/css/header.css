@@ -68,14 +68,11 @@ header{
     margin-right: 2px;
     margin-top: 0px;
 }
-#wrap {
-    margin: 0px;
-    float:right;
-}
+
 
 #menu {
     display:none;
-    float: left;
+    float: right;
     height:60px;
     background:#E6E6E6;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -84,13 +81,10 @@ header{
 
 }
 
-#cover{
-    margin: 0px;
-    float:right;
-}
-#signIn{
+
+#forEntered{
     display: none;
-    float: left;
+    float: right;
     height:60px;
     background:#E6E6E6;
     -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -129,10 +123,6 @@ header{
     padding: 15px 20px;
     background: white;
     cursor: pointer;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
     transition: all 0.5s;
 
 }
@@ -141,8 +131,6 @@ header{
     background: gainsboro;
     color: #666;
     opacity:1;
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
 }
@@ -153,18 +141,10 @@ header{
     top: 60px;
     left:0px;
     width: 190px;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
     box-shadow: none;
     display: none;
     opacity: 0;
     visibility: hidden;
-    -webkit-transiton: opacity 0.5s;
-    -moz-transition: opacity 0.5s;
-    -ms-transition: opacity 0.5s;
-    -o-transition: opacity 0.5s;
-    -transition: opacity 0.5s;
-
 }
 
 #heading ul li ul li {
@@ -176,8 +156,6 @@ header{
 #heading ul li ul li:hover {
     margin-top:5px;
     margin-bottom:5px;
-    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);}
 #heading ul li:hover ul {
     display: block;

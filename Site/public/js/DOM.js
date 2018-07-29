@@ -84,10 +84,11 @@ var DOM = function() {
 
     function setNickname() {
         clearNickname();
-        document.getElementById('signIn').style.display = 'none';
+        document.getElementById('forEntered').style.display = 'none';
         document.getElementById('menu').style.display = 'none';
         if (user) {
-            document.getElementById('signIn').style.display = 'inline';
+
+            document.getElementById('forEntered').style.display = 'inline';
             let a = document.createElement('a');
             a.setAttribute('href', '#');
             a.className = 'nickname';
@@ -114,24 +115,7 @@ var DOM = function() {
         document.getElementById('error').style.display = 'block';
     }
 
-    /*function example(auth) {
-        //1
-        var element = document.createElement('div')
-        element.innerHTML = `
-            <div class="header">${auth}</div>
-            <button />
-        `;
-        //2
 
-        var container = document.querySelector('.posts');
-        var template = document.getElementById('tmp-post');
-        var elementCopy = document.importNode(
-            template.content,
-            true // deep
-        ); // we get copy of article that are ready but not in the dom
-        elementCopy.querySelector('.author').textContent = auth;
-        container.appendChild(elementCopy);
-    }*/
     function setEditPost(id) {
         clear();
         let post = moduleWorkWithChangingPost.getPhotoPost(id);
@@ -200,7 +184,9 @@ var DOM = function() {
             setFilter();
         }
         let photoPosts = moduleWorkWithChangingPost.getPhotoPosts(skip, top, filterConfig);
-
+        if(!photoPosts){
+            return;
+        }
         console.log('Begin:' + photoPosts.length);
         for (let i = 0; i < photoPosts.length; i++) {
             if (!photoPosts[i].isDelete) {
@@ -211,9 +197,6 @@ var DOM = function() {
         if (showedPosts % 10 === 0 && showedPosts !== 0) {
             setButtonDownload();
         }
-        //addEventLike();
-        //addEventEditPost();
-        //addEventDeletePost();
         addFilterAuthor();
         addFilterHashtags();
         saveDataToLocalStorage();

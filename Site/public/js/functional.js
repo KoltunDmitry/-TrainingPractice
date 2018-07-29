@@ -10,8 +10,11 @@ var moduleWorkWithChangingPost = function () {
             password : 'qwerty'
         }
         ];
-    var photoPosts = JSON.parse(localStorage.getItem('Posts'));
 
+    var photoPosts = JSON.parse(localStorage.getItem('Posts'));
+    if(!photoPosts){
+        photoPosts = [];
+    }
         /*[{
             id: '1',
             description: '1',
@@ -272,18 +275,18 @@ var moduleWorkWithChangingPost = function () {
     function splitDate(strDate) {
         var date = strDate.split("/");
         date[0] = Number(date[0]);
-        date[1] = Number(--date[1]);
+        date[1] = Number(date[1]);
         date[2] = Number(date[2]);
         return date;
     }
     function compareDate(a, b) {
-        if(!(a instanceof Date)){
+        if (!(a instanceof Date)) {
             return new Date(b.createdAt) - new Date(a.createdAt);
         }
-        else{
+        else {
             return b.createdAt - a.createdAt;
         }
-}
+    }
 
     function unique(arr) {
         var obj = {};
@@ -297,9 +300,8 @@ var moduleWorkWithChangingPost = function () {
     function getAllAuthor() {
         var name = [];
         photoPosts.forEach(function (item) {
-
             if (!item.isDelete) {
-                name.push(item.author);
+                name.push(item);
             }
         });
         return unique(name);
@@ -318,9 +320,12 @@ var moduleWorkWithChangingPost = function () {
         return unique(hashtags);
     }
 
-    function getPhotoPosts(skip = 0, top, filterConfig) {
+    function getPhotoPosts(skip, top, filterConfig) {
         skip = skip || 0;
         top = top || 0;
+        if(!photoPosts){
+            return null;
+        }
         var min = top;
         if (min > photoPosts.length) {
             min = photoPosts.length;
@@ -368,18 +373,20 @@ var moduleWorkWithChangingPost = function () {
         return found;
     }
 
-    function validatePhotoPost(post, isForAddPost) {
+    function validatePhotoPost(post) {
         var isValidate = true;
         if (typeof post.id !== "string" || typeof post.description !== "string"
             || typeof post.author !== "string" || typeof post.photoLink !== "string"
             || !(post.createdAt instanceof Date) || !(post.hashTag instanceof Array)) {
             return false
         }
-        photoPosts.forEach(function (item) {
-            if (item.id === post.id) {
-                return false;
-            }
-        });
+        if(photoPosts) {
+            photoPosts.forEach(function (item) {
+                if (item.id === post.id) {
+                    return false;
+                }
+            });
+        }
         if (post.description.length === 0 || post.description.length >= 200) {
             return false;
         }
@@ -429,7 +436,7 @@ var moduleWorkWithChangingPost = function () {
             }
         }
     }
-    function isMorePosts(top) {
+    function hasMorePosts(top) {
         for(let i = top; i < photoPosts.length;i++){
             if(!photoPosts[i].isDelete){
                 return true;
@@ -437,7 +444,7 @@ var moduleWorkWithChangingPost = function () {
         }
         return false;
     }
-    function isCorrectLoginPassord(login,password) {
+    function isCorrectLoginPassword(login,password) {
         let account = accountBase.find(account => account.login === login);
         return login;
         if(account && account.password === password){
@@ -471,25 +478,23 @@ var moduleWorkWithChangingPost = function () {
         }
         return false;
     }
-
     /*var post = {
         description: "dsf",
         photoLink: "link",
         hashTag: ["#dima", "#more"],
     };
     editPhotoPost("8",post);*/
-    console.log("Dima");
     return {
         getPhotoPosts,
         getPhotoPost,
         validatePhotoPost,
-        isMorePosts,
+        hasMorePosts,
         addPhotoPost,
         editPhotoPost,
         removePhotoPostLabeled,
         getAllAuthor,
         getAllHashtags,
-        isCorrectLoginPassord,
+        isCorrectLoginPassword,
         formatDate,
         splitDate,
         makeArrayHashtagsFromString,
